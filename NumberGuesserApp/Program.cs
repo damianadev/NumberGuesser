@@ -6,7 +6,7 @@ public static class NumberGuesser
 
     public static void Main()
     {
-        Console.WriteLine(number);
+        //Console.WriteLine(number);
 
         Console.WriteLine("Guess a number 1-100!");
 
