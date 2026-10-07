@@ -6,7 +6,7 @@ public static class NumberGuesser
 
     public static void Main()
     {
-        //Console.WriteLine(number);
+        // Console.WriteLine(number);
 
         Console.WriteLine("Guess a number 1-100!");
 
@@ -15,28 +15,36 @@ public static class NumberGuesser
 
     public static void Guesser()
     {
-        string? numberStr = Console.ReadLine();
+        int numberInt;
 
-        int numberInt = Convert.ToInt32(numberStr);
-
-
-        if (numberInt == number)
+        do
         {
-            Console.WriteLine("You guessed a number!");
-        }
-        else if (numberInt < number)
-        {
-            Console.WriteLine("Higher!");
-            Console.WriteLine("Try again.");
+            string? numberStr = Console.ReadLine();
 
-            Guesser();
-        }
-        else if (numberInt > number)
-        {
-            Console.WriteLine("Lower!");
-            Console.WriteLine("Try again.");
-            Guesser();
-        }
+            numberInt = Convert.ToInt32(numberStr);
 
+
+            if (numberInt < 1 || numberInt > 100)
+            {
+                Console.WriteLine("Enter a number from 1 to 100!");
+            }
+            else if (numberInt < number)
+            {
+                Console.WriteLine("Higher!");
+                Console.WriteLine("Try again.");
+            }
+            else if (numberInt > number)
+            {
+                Console.WriteLine("Lower!");
+                Console.WriteLine("Try again.");
+            }
+            else
+            {
+                Console.WriteLine("You guessed a number!");
+            }
+
+        }
+        while (numberInt != number);
     }
+
 }
